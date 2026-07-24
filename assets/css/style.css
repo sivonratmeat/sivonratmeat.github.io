@@ -1,29 +1,30 @@
 @charset "UTF-8";
 :root {
-  --color-primary: #aaa;
-  --color-secondary: #eee;
-  --color-text: #222;
-  --color-border: #222;
-  --color-accent: #aaa;
+  --color-primary: #000000;
+  --color-secondary: #000000;
+  --color-text: crimson;
+  --color-border: crimson;
+  --color-accent: gray;
   --color-interactive: #0066cc;
   --color-interactive-bg: #0066cc;
   --color-highlight: #ccc;
   --bg-body: var(--color-primary);
   --bg-main: var(--color-secondary);
   --bg-sidebar: var(--bg-main);
-  --border-width: 4px;
+  --border-width: 1px;
   --border-width-thin: 1px;
   --border-container: var(--border-width) solid var(--color-border);
   --border-thumbnail: var(--border-width-thin) solid var(--color-border);
   --cw-shadow-color: rgba(0, 0, 0, 0.65);
   --cw-visible-color: rgba(0, 0, 0, 0.1);
-  --container-border-radius: 10px;
+  --container-border-radius: 0px;
   --thumbnail-size: 160px;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg-body);
+  font-family: "VCROSDMono";
+  background-color: #000000;
+  background-image: url("https://www.transparenttextures.com/patterns/subtle-dots.png");
   color: var(--color-text);
   display: grid;
   grid-template-areas: "sidebar main rightsidebar";
@@ -39,14 +40,48 @@ body {
   color: var(--color-text);
 }
 
-a:link {
+/*a:link {
   color: var(--color-interactive);
 }
 
 a:visited {
   color: var(--color-interactive);
+}*/
+/* unvisited link */
+a:link {
+  color: crimson;
 }
 
+/* visited link */
+a:visited {
+  color: gray;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: #000000;
+}
+
+.blinker {
+  animation: blinking 1s infinite;
+}
+
+@keyframes blinking {
+  0% {
+    color: #000000;
+  }
+  50% {
+    color: transparent;
+  }
+  100% {
+    color: #000000;
+  }
+}
 #skip-links {
   position: absolute;
   top: -3em;
@@ -197,7 +232,7 @@ p > .blur-content {
   height: 100%;
   background: var(--cw-shadow-color);
   box-shadow: var(--cw-shadow-color) 0px 0px 5px 5px;
-  color: #eee;
+  color: #000000;
   transition: box-shadow 120ms;
 }
 .blur-content[data-blurred] .blur-warning {
@@ -277,7 +312,7 @@ ul.gallery .lightbox-image {
   padding: 0;
   width: 128px;
   height: 128px;
-  border: 1px solid #aaa;
+  border: 1px solid #000000;
   border-radius: var(--container-border-radius);
   overflow: hidden;
 }
