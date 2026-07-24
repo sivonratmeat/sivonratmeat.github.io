@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Website Name | Sitemap</title>
+
+  	
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"></link>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+		<link rel="stylesheet" href="/assets/css/style.css">
+
+		
+
+		
+			<script src="/assets/js/contentWarning.js"></script>
+		
+
+		
+			<script src="/assets/js/lightbox.js"></script>
+		
+		
+		
+			<script src="/assets/js/widgets.js"></script>
+		
+
+	</head>
+	<body>
+		<div id="skip-links">
+			<a href="#content">Jump to main content</a>
+		</div>
+
+		<aside id="left-sidebar" class="sidebar">
+	<nav>
+		<h2 id="sidebar-nav">Navigation</h2>
+		<ul aria-labelledby="sidebar-nav">
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/about">About Us</a>
+			</li>
+		</ul>
+
+		<h2 id="sidebar-namespaces">Namespaces</h2>
+		<ul aria-labelledby="sidebar-namespaces">
+			
+				<li>
+					<a href="/characters">Characters</a>
+				</li>
+			
+				<li>
+					<a href="/locations">Locations</a>
+				</li>
+			
+				<li>
+					<a href="/stories">Stories</a>
+				</li>
+			
+		</ul>
+		
+		<h2 id="sidebar-special">Special</h2>
+		<ul aria-labelledby="sidebar-special">
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			<li>
+				<a href="/sitemap">Sitemap</a>
+			</li>
+			
+				<li>
+					<a href="#" id="cw-dialogue">Content Options</a>
+				</li>
+			
+			<li>
+				<a href="https://github.com/portfiend/eleventy-oc-directory-template">Get The Template!</a>
+			</li>
+		</ul>
+	</nav>
+</aside>
+
+		<main id="content">
+			
+<h1>Sitemap</h1>
+
+<ol aria-label="List of all pages">
+	
+		<li>
+			<a href="/about/">About Us</a>
+      
+		</li>
+	
+		<li>
+			<a href="/characters/">Characters</a>
+      
+		</li>
+	
+		<li>
+			<a href="/">Home</a>
+      
+		</li>
+	
+		<li>
+			<a href="/locations/">Locations</a>
+      
+		</li>
+	
+		<li>
+			<a href="/sitemap/">Sitemap</a>
+      
+		</li>
+	
+		<li>
+			<a href="/stories/">Stories</a>
+      
+		</li>
+	
+		<li>
+			<a href="/tags/">Tags</a>
+      
+		</li>
+	
+</ol>
+		</main>
+
+		
+
+		
+			
+	<dialog id="content-warning" autofocus>
+		
+			<p>
+				This website may contain content marked for 
+				<b>18+ audiences</b> only. By clicking the checkbox below, you agree that you are above this age.
+			</p>
+			<input id="cbx-adult" 
+				value="adult" 
+				type="checkbox" 
+				autocomplete="off"/>
+			<label for="cbx-adult">I agree that I am over the age of 18!</label>
+		
+
+		
+			<p>
+				This site may contain the following content warnings. Sensitive content will be 
+				<b>blurred</b> by default. Checked boxes will instead be <b>visible</b> by default. 
+			</p>
+			<ul>
+				
+					<li>
+						<input id="cbx-flash" 
+							value="flash" 
+							type="checkbox"
+							autocomplete="off"
+							
+							checked
+							/>
+						<label id="cbx-flash-label" for="cbx-flash">
+							Photosensitive imagery
+							(flashing / strobing / high-contrast)
+						</label>
+					</li>
+				
+					<li>
+						<input id="cbx-gore" 
+							value="gore" 
+							type="checkbox"
+							autocomplete="off"
+							
+							
+							/>
+						<label id="cbx-gore-label" for="cbx-gore">
+							Gore / Graphic violence
+							
+						</label>
+					</li>
+				
+					<li>
+						<input id="cbx-nudity" 
+							value="nudity" 
+							type="checkbox"
+							autocomplete="off"
+							
+							
+							/>
+						<label id="cbx-nudity-label" for="cbx-nudity">
+							Nudity
+							(non-sexual)
+						</label>
+					</li>
+				
+					<li>
+						<input id="cbx-sexual" 
+							value="sexual" 
+							type="checkbox"
+							autocomplete="off"
+							data-require=adult
+							
+							disabled/>
+						<label id="cbx-sexual-label" for="cbx-sexual">
+							Sexual content
+							(pornographic or sexually provocative)
+						</label>
+					</li>
+				
+			</ul>
+		
+
+		<form method="dialog">
+			<button 
+				id="confirm-dialog"
+				 >
+				Confirm my content preferences
+			</button>
+		</form>
+
+		<p>(These settings may be changed at any time via <b>Content Options</b> in the navigation bar.)</p>
+	</dialog>
+
+	
+	
+		
+	
+	<script>
+		{
+			const dialog = document.querySelector("dialog#content-warning");
+			const alreadyDone = localStorage.getItem("cw-confirm");
+			initializeContentWarning('["adult","flash","gore","nudity","sexual"]');
+			
+		}
+	</script>
+
+	<style>
+		
+			body:not(.optIn-adult) .cw-adult{
+				display: none;
+			}
+
+			.blur-content {
+				cursor: pointer;
+			}
+
+			.blur-content[data-blurred] .blur-inner {
+				filter: blur(5px);
+			}
+		
+			body:not(.optIn-flash) .cw-flash{
+				display: none;
+			}
+
+			.blur-content {
+				cursor: pointer;
+			}
+
+			.blur-content[data-blurred] .blur-inner {
+				filter: blur(5px);
+			}
+		
+			body:not(.optIn-gore) .cw-gore{
+				display: none;
+			}
+
+			.blur-content {
+				cursor: pointer;
+			}
+
+			.blur-content[data-blurred] .blur-inner {
+				filter: blur(5px);
+			}
+		
+			body:not(.optIn-nudity) .cw-nudity{
+				display: none;
+			}
+
+			.blur-content {
+				cursor: pointer;
+			}
+
+			.blur-content[data-blurred] .blur-inner {
+				filter: blur(5px);
+			}
+		
+			body:not(.optIn-sexual) .cw-sexual{
+				display: none;
+			}
+
+			.blur-content {
+				cursor: pointer;
+			}
+
+			.blur-content[data-blurred] .blur-inner {
+				filter: blur(5px);
+			}
+		
+	</style>
+
+
+
+		
+		
+		
+			<div id="lb-overlay" hidden>
+	<figure id="lb-preview">
+		<img id="lb-img" src="" alt="" />
+	</figure>
+
+	<footer id="lb-metadata">
+		<div id="lb-caption"></div>
+		<table id="lb-metalist"></table>
+	</footer>
+</div>
+		
+	</body>
+</html>
