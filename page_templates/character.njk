@@ -1,0 +1,125 @@
+---
+
+tags:
+- example
+
+# Used as a short ID for various page data-retrieving functions.
+id: character:example
+pageTitle: Character Name
+thumbnailUrl: icons/example.svg
+linkedPages: 
+- location:example
+- story:example
+pageThemes:
+- card.css
+
+name: Character Name
+tableFields:
+  Full name: Example
+  Aliases: Example
+  Gender: Example
+  Pronouns: Example
+  Age: Example
+  Orientation: Example
+  Species: Example
+  Occupation: Example
+  Residence: Example
+  Status: Example
+
+permissionTables:
+  Fan work preferences:
+    Fanworks: Allowed
+    Commissions: Ask first
+    OC interaction: Allowed
+    Shipping: Canon only
+  Ownership details:
+    Designer: Me
+    Owner: Me
+    Up for sale: Never
+    Up for trade: No
+
+---
+
+{% from "macros/_tableData.njk" import cardTable, permissions with context %}
+
+<h1>{{pageTitle}}</h1>
+
+{% tabList id="character", title="Character info" %}
+  {% tabButton id="main", label="Basic Information", selected=true %}
+  {% tabButton id="gallery", label="Gallery" %}
+  {% tabButton id="permissions", label="Permissions" %}
+{% endtabList %}
+
+<!-- 
+MAIN PANEL 
+-->
+{% tabPanel id="main", listId="character" %}
+  <article class="card char-card card-{{name | slugify}}">
+    <header class="card-header">
+      <h2>{{name}}</h2>
+    </header>
+    <div class="card-left card-reference">
+      {% set refImgDesc = "Reference image of " + name %}
+      {% lightboxImg "portrait.jpg", refImgDesc %}
+    </div>
+    <main class="card-right card-details card-highlight">
+      {{ cardTable() }}
+      <div class="card-biography">
+        {% renderMarkdown %}
+          A basic summary of who this character is. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Morbi varius libero non sem dapibus, eget viverra nisl sagittis. 
+          
+          Ut interdum mi non sagittis euismod. Suspendisse id venenatis massa. Aliquam ornare, nibh sit amet
+          interdum elementum, leo sem laoreet nibh, at sollicitudin diam ipsum eu risus. Aenean gravida eu 
+          nibh id tincidunt. Pellentesque lorem mauris, cursus sed ligula eget, cursus posuere risus. Phasellus
+          vel enim volutpat, sagittis augue at, condimentum ex.
+        {% endrenderMarkdown %}
+      </div>
+    </main>
+  </article>
+
+  {% renderMarkdown %}
+## Biography
+  
+  Here is where you write your character info, in Markdown!
+
+## Appearance
+
+## Personality
+
+  {% endrenderMarkdown %}
+{% endtabPanel %}
+
+<!-- 
+GALLERY PANEL 
+-->
+{% tabPanel id="gallery", listId="character" %}
+  {% gallery %}
+    {% lightboxImg "example.png", "Example image", {
+      artist: "Artist name here",
+      artist_website: "https://example.com",
+      license: "All rights reserved",
+      creation_date: "2023-11-20"
+    } %}
+    {% lightboxImg "example.png", "Example image", {
+      artist: "Artist name here",
+      artist_website: "https://example.com",
+      license: "All rights reserved",
+      creation_date: "2023-11-20"
+    } %}
+  {% endgallery %}
+{% endtabPanel %}
+
+<!-- 
+PERMISSIONS PANEL 
+-->
+{% tabPanel id="permissions", listId="character" %}
+  {{ permissions() }}
+  {% renderMarkdown %}
+Elaborate on your character permissions. Are there certain themes/topics that are off-limits?
+How about themes/topics that you'd like to see them featured in more?
+
+### Global preferences
+{% include "imports/_globalCharacterPermissions.md" %}
+  {% endrenderMarkdown %}
+{% endtabPanel %}

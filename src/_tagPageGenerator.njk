@@ -1,0 +1,59 @@
+---
+layout: base.njk
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  addAllPagesToCollections: true 
+  filter:
+    - all
+
+permalink: /tagged/{{ tag }}/
+
+eleventyComputed:
+  pageTitle: Tagged “{{ tag }}”
+
+addAllPagesToCollections: true 
+
+---
+<h1>Tagged “{{tag}}”</h1>
+
+<label for="viewSelector">Select View:</label>
+<select id="viewSelector" autocomplete="off">
+  <option value="list" selected>List View</option>
+  <option value="grid">Grid View</option>
+</select>
+
+{% for namespace, data in namespaces %}
+  {% set namespacePages = collections[tag] | namespaced(namespace) | alphabetizePages %}
+  {% if namespacePages and namespacePages | length > 0 %}
+    <h2>
+      {{data.title}} ({{namespacePages | length}})
+    </h2>
+
+    <div class="list-view">
+      <ol >
+        {% for _creationPage in namespacePages | alphabetizePages %}
+          <li>
+            <a href="{{ _creationPage.url }}">{{ _creationPage.data.name or _creationPage.data.pageTitle }}</a>
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+    <div class="grid-view" hidden>
+      <ol class="thumb-list">
+        {% for _creationPage in namespacePages | alphabetizePages %}
+          <li class="thumb-list-item">
+            {% thumbnail _creationPage %}
+          </li>
+        {% endfor %}
+      </ol>
+    </div>
+  {% endif %}
+{% endfor %}
+
+<p>
+  <a href="/tags">Back to tag directory</a>
+</p>
+
+<script src="{{metadata.assets.js}}/filterTags.js"></script>

@@ -1,0 +1,40 @@
+<aside id="left-sidebar" class="sidebar">
+	<nav>
+		<h2 id="sidebar-nav">Navigation</h2>
+		<ul aria-labelledby="sidebar-nav">
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/about">About Us</a>
+			</li>
+		</ul>
+
+		<h2 id="sidebar-namespaces">Namespaces</h2>
+		<ul aria-labelledby="sidebar-namespaces">
+			{% for _, namespace in namespaces %}
+				<li>
+					<a href="{{namespace.url}}">{{namespace.title}}</a>
+				</li>
+			{% endfor %}
+		</ul>
+		
+		<h2 id="sidebar-special">Special</h2>
+		<ul aria-labelledby="sidebar-special">
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			<li>
+				<a href="/sitemap">Sitemap</a>
+			</li>
+			{% if options.enableContentWarnings %}
+				<li>
+					<a href="#" id="cw-dialogue">Content Options</a>
+				</li>
+			{% endif %}
+			<li>
+				<a href="https://github.com/portfiend/eleventy-oc-directory-template">Get The Template!</a>
+			</li>
+		</ul>
+	</nav>
+</aside>
