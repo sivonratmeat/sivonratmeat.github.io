@@ -1,11 +1,11 @@
 @use "sass:math";
 
 :root {
-  --color-primary: #aaa;
+  --color-primary: #000000;
   --color-secondary: #eee;
   --color-text: #222;
   --color-border: #222;
-  --color-accent: #aaa;
+  --color-accent: #000000;
   --color-interactive: #0066cc;
   --color-interactive-bg: #0066cc;
   --color-highlight: #ccc;
@@ -27,9 +27,24 @@
 $sb-width: 180;
 $sidebar-width: $sb-width * 1px;
 
+@font-face {
+  font-family: 'paskowy';
+  src: url("/assets/css/paskowy-webfont.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'VCROSDMono';
+  src: url("/assets/css/VCROSDMono-webfont.woff") format("woff");
+  font-display: swap;
+}
+
+  
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "VCROSDMono";
   background: var(--bg-body);
+  background-image: url("https://www.transparenttextures.com/patterns/subtle-dots.png");
   color: var(--color-text);
   display: grid;
   grid-template-areas: "sidebar main rightsidebar";
@@ -306,7 +321,7 @@ ul.gallery {
     padding: 0;
     width: 128px;
     height: 128px;
-    border: 1px solid #aaa;
+    border: 1px solid #000000;
     border-radius: var(--container-border-radius);
     overflow: hidden;
 
