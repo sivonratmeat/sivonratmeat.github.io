@@ -2,7 +2,7 @@
 
 :root {
   --color-primary: #000000;
-  --color-secondary: #26110e;
+  --color-secondary: #120A0A;
   --color-text: #a6070b;
   --color-border: #a6070b;
   --color-accent: #000000;
@@ -55,6 +55,7 @@ body {
   grid-gap: 20px;
   overflow-x: hidden;
 }
+
 
 ::selection {
   background-color: var(--color-highlight);
@@ -700,3 +701,28 @@ body:not(.include-right-sidebar) {
     max-width: 1600px;
   }
 }
+
+/*for scrollbar for the other pages*/
+        /* Designing for scroll-bar */
+        ::-webkit-scrollbar {
+            width: 1px;
+  
+        }
+     
+        /* Track */
+        ::-webkit-scrollbar-track {
+            border: 1px solid crimson;
+
+        }
+     
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: crimson;
+
+        }
+     
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: crimson;
+        }
+  
