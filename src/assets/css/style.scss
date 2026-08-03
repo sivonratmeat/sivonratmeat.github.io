@@ -2,12 +2,13 @@
 
 :root {
   --color-primary: #000000;
-  --color-secondary: #eee;
-  --color-text: #222;
-  --color-border: #222;
+  --color-secondary: #26110e;
+  --color-text: #a6070b;
+  --color-border: #a6070b;
   --color-accent: #000000;
-  --color-interactive: #0066cc;
-  --color-interactive-bg: #0066cc;
+  --color-interactive: crimson;
+  --color-interactive-used: gray;
+  --color-interactive-bg: crimson;
   --color-highlight: #ccc;
 
   --bg-body: var(--color-primary);
@@ -65,7 +66,7 @@ a:link {
 }
 
 a:visited {
-  color: var(--color-interactive);
+  color: var(--color-interactive-used);
 }
 
 #skip-links {
@@ -231,7 +232,7 @@ button {
     height: 100%;
     background: var(--cw-shadow-color);
     box-shadow: var(--cw-shadow-color) 0px 0px 5px 5px;
-    color: #eee;
+    color: #d0d7df;
     transition: box-shadow 120ms;
   }
 
