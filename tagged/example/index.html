@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Website Name | Sitemap</title>
+		<title>Website Name | Tagged “example”</title>
 
   	
 <link rel="icon" href="/favicon.ico">
@@ -84,62 +84,63 @@
 </aside>
 
 		<main id="content">
-			
-<h1>Sitemap</h1>
+			<h1>Tagged “example”</h1>
 
-<ol aria-label="List of all pages">
-	
-		<li>
-			<a href="/about/">About Us</a>
-      
-		</li>
-	
-		<li>
-			<a href="/characters/Charactest/">Character Name</a>
-      (character)
-		</li>
-	
-		<li>
-			<a href="/characters/">Characters</a>
-      
-		</li>
-	
-		<li>
-			<a href="/">Home</a>
-      
-		</li>
-	
-		<li>
-			<a href="/locations/">Locations</a>
-      
-		</li>
-	
-		<li>
-			<a href="/sitemap/">Sitemap</a>
-      
-		</li>
-	
-		<li>
-			<a href="/stories/">Stories</a>
-      
-		</li>
-	
-		<li>
-			<a href="/tagged/character/">Tagged “character”</a>
-      
-		</li>
-	
-		<li>
-			<a href="/tagged/example/">Tagged “example”</a>
-      
-		</li>
-	
-		<li>
-			<a href="/tags/">Tags</a>
-      
-		</li>
-	
-</ol>
+<label for="viewSelector">Select View:</label>
+<select id="viewSelector" autocomplete="off">
+  <option value="list" selected>List View</option>
+  <option value="grid">Grid View</option>
+</select>
+
+
+  
+  
+    <h2>
+      Characters (1)
+    </h2>
+
+    <div class="list-view">
+      <ol >
+        
+          <li>
+            <a href="/characters/Charactest/">Character Name</a>
+          </li>
+        
+      </ol>
+    </div>
+    <div class="grid-view" hidden>
+      <ol class="thumb-list">
+        
+          <li class="thumb-list-item">
+            
+			<article class="thumb-item-box" >
+				<a href="/characters/Charactest/">
+					<img 
+						alt="Character Name" 
+						src="/assets/img/icons/example.svg" 
+						class="thumbnail"/>
+					<div class="thumb-footer">Character Name</div>
+				</a>
+			</article>
+		
+          </li>
+        
+      </ol>
+    </div>
+  
+
+  
+  
+
+  
+  
+
+
+<p>
+  <a href="/tags">Back to tag directory</a>
+</p>
+
+<script src="/assets/js/filterTags.js"></script>
 		</main>
 
 		

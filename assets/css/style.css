@@ -1,12 +1,13 @@
 @charset "UTF-8";
 :root {
   --color-primary: #000000;
-  --color-secondary: #eee;
-  --color-text: #222;
-  --color-border: #222;
+  --color-secondary: #120A0A;
+  --color-text: #a6070b;
+  --color-border: #a6070b;
   --color-accent: #000000;
-  --color-interactive: #0066cc;
-  --color-interactive-bg: #0066cc;
+  --color-interactive: crimson;
+  --color-interactive-used: gray;
+  --color-interactive-bg: crimson;
   --color-highlight: #ccc;
   --bg-body: var(--color-primary);
   --bg-main: var(--color-secondary);
@@ -55,7 +56,7 @@ a:link {
 }
 
 a:visited {
-  color: var(--color-interactive);
+  color: var(--color-interactive-used);
 }
 
 #skip-links {
@@ -208,7 +209,7 @@ p > .blur-content {
   height: 100%;
   background: var(--cw-shadow-color);
   box-shadow: var(--cw-shadow-color) 0px 0px 5px 5px;
-  color: #eee;
+  color: #d0d7df;
   transition: box-shadow 120ms;
 }
 .blur-content[data-blurred] .blur-warning {
@@ -620,4 +621,24 @@ body {
   #content-warning {
     max-width: 1600px;
   }
+}
+/*for scrollbar for the other pages*/
+/* Designing for scroll-bar */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border: 1px solid crimson;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: crimson;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: crimson;
 }
